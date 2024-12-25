@@ -6,12 +6,10 @@
 //   plugins: [react()],
 // })
 
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: 'Notes-App', // Add this line
+  base: 'NOTE APP', // Add this line
 });
-
