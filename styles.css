@@ -72,6 +72,7 @@ footer p {
     height: 36px;
     cursor: pointer;
     outline: none;
+    background: transparent;
 }
 
 form {
