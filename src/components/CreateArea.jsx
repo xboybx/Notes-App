@@ -18,6 +18,13 @@ function CreateArea(props) {
     }
 
     function submitNote(event) {
+        event.preventDefault();
+
+        // Check if note is empty
+        if (note.title.trim() === "" && note.content.trim() === "") {
+            return;
+        }
+
         // this add on function is same as Additem()
         //  in app which precess note in app component
         props.onAdd(note);
@@ -25,7 +32,13 @@ function CreateArea(props) {
             title: "",
             content: "",
         });
-        event.preventDefault();
+    }
+
+    // Handle Enter key press
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            submitNote(event);
+        }
     }
 
     return (
@@ -44,7 +57,7 @@ function CreateArea(props) {
                     rows="3"
                     value={note.content}
                 />
-                <button onClick={submitNote}><AddIcon /></button>
+                <button onKeyDown={handleKeyPress} onClick={submitNote}><AddIcon /></button>
             </form>
         </div>
     );

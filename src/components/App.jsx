@@ -30,7 +30,7 @@ function App() {
     setNotes((prevNotes) => {
       return [...prevNotes, note];
     });
-    // After adding notes it removes the error meddage
+    // After adding notes it removes the error message
     setError("");
   }
 
