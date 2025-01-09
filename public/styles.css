@@ -46,9 +46,25 @@ footer p {
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
     width: 240px;
+    height: 150px;
+    /* Fixed height */
     margin: 16px;
     float: left;
+    overflow: hidden;
+    /* Hide overflow */
+    cursor: pointer;
+    /* Indicate that the note is clickable */
+    transition: height 5s ease-in;
+    /* Smooth transition for expanding */
 }
+
+.note.expanded {
+    height: auto;
+    /* Expand to show full content */
+    overflow: visible;
+    /* Show overflow content */
+}
+
 
 .note h1 {
     font-size: 1.1em;
@@ -62,6 +78,7 @@ footer p {
     word-wrap: break-word;
 }
 
+
 .note button {
     position: relative;
     float: right;
@@ -73,6 +90,8 @@ footer p {
     cursor: pointer;
     outline: none;
     background: transparent;
+    z-index: 1;
+    /* Ensure the button is above the content */
 }
 
 form {
